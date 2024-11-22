@@ -24,6 +24,7 @@ w = 1
 
 # Define the tabs and their content
 tabs = ['Title page',
+        'Summary of Part 1',
         'Determinism & Predictability',
         'Randomness as a modeling tool',
         'Predictability of the Mean',
@@ -51,6 +52,56 @@ if selected_tab == 'Title page':
     st.markdown("### ❏ Random number generators (and why they don't exist)")
     st.markdown("### ❏ Randomness & Chaos")
     st.markdown("### ❏ A worked example")
+
+
+# ---------------------------------------
+# Summary of Part 1
+# ---------------------------------------
+
+if selected_tab == 'Summary of Part 1':
+
+    # Display the selected tab's content
+    st.title("Summary of Part 1")
+
+
+    variables = st.sidebar.checkbox("Dynamic variables")
+    if variables:
+
+        hline(w)
+
+        st.markdown('### ❏ Dynamic variables')
+
+        mytext('''
+            ○ Their type: numerical, non-numerical
+            ''')
+
+        mytext('''
+            ○ Their meaning: 
+            ''')
+
+        st.image("figures/aggregation.png", 
+        #caption='caption', 
+        width = 650)
+
+        mytext('''
+            ○ Their update: 
+            ''')
+
+        mytext('''
+            x (t) ⟶ x (t + Δt)
+            ''')
+
+
+
+        st.image("figures/non-linear.png", 
+        #caption='caption', 
+        width = 650)
+
+
+
+
+
+
 
 
 # ---------------------------------------
