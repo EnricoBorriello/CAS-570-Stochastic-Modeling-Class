@@ -82,15 +82,18 @@ if selected_tab == 'Summary of Part 1':
         st.image("figures/aggregation.png", 
         #caption='caption', 
         width = 650)
+ 
+
+    update = st.sidebar.checkbox("Dynamic rules")
+    if update:
+
+        hline(w)
+
+        st.markdown('### ❏ Dynamic rules')
 
         mytext('''
-            ○ Their update: 
+            x (t) ⟶ x (t + Δt) ⟶ ... ⟶ iteration  ⟶ ... 
             ''')
-
-        mytext('''
-            x (t) ⟶ x (t + Δt)
-            ''')
-
 
 
         st.image("figures/non-linear.png", 
@@ -98,11 +101,53 @@ if selected_tab == 'Summary of Part 1':
         width = 650)
 
 
+        mytext('''
+            No notion of linearity for non-numerical variables. (This includes Boolean variables.)
+            ''')
 
 
 
 
 
+    update = st.sidebar.checkbox("Parameters and hidden assumptions")
+    if update:
+
+        hline(w)
+
+        st.markdown('### ❏ Parameters and hidden assumptions')
+
+        mytext('''
+            ○ Implicit assumptions on everything we don't include in our model.
+            ''')
+
+        mytext('''
+            ○ This includes the meaning of our parameters.
+            ''') 
+
+        sub_option_1 = st.sidebar.checkbox("example: comp. pop. dynamics", key="sub1")
+        sub_option_2 = st.sidebar.checkbox("example: SIR", key="sub2")
+        sub_option_3 = st.sidebar.checkbox("example: Boids", key="sub3")
+
+        if sub_option_1:
+
+            st.image("figures/parameters.png", 
+            #caption='caption', 
+            width = 600)
+
+        if sub_option_2:
+
+            st.image("figures/covid.png", 
+            #caption='caption', 
+            width = 600)
+
+        if sub_option_3:
+
+            mytext('''○ Bird-oid Objects ("Boids") - Craig Reynolds 1986''')
+            st.markdown("https://eater.net/boids")
+
+            st.image("figures/boids.png", 
+            #caption='caption', 
+            width = 600)
 
 # ---------------------------------------
 # Determinism & Predictability
